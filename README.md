@@ -1,31 +1,78 @@
 # SQL Sage
 
-**SQL Sage is an English-language extension you install inside SQL Server Management Studio 22 on Windows (a VSIX add-in)** — an AI pair-DBA that explains errors, tunes slow queries and runs SQL safely, signed in with your own Claude or ChatGPT account (no API key). It runs as part of SSMS on your machine; it is **not** a web app or an online SQL editor.
+[![Latest release](https://img.shields.io/github/v/release/LUMASoftPL/sqlsage?label=release&color=2b7489)](https://github.com/LUMASoftPL/sqlsage/releases/latest)
+[![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.pl)
+[![Keyless](https://img.shields.io/badge/keyless-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl)
+
+**AI pair-DBA for SSMS 22 that proves & logs what it changes — keyless, running on your own Claude / ChatGPT / Codex.**
+
+SQL Sage is an English-language extension you install inside **SQL Server Management Studio 22** on Windows (a VSIX add-in). It brings an AI pair-DBA into the query editor: it explains errors, tunes slow T-SQL, and runs SQL safely — signed in with your own **Claude** (Claude Code) or **ChatGPT / OpenAI Codex** account, so there is **no API key** and no second, metered AI bill. It runs as part of SSMS on your machine; it is **not** a web app or an online SQL editor.
+
+It is an independent extension built by **Luma (LUMA sp. z o.o.)** and is **not affiliated with Microsoft, Anthropic or OpenAI**.
 
 ![SQL Sage inside SSMS](assets/screenshot.png)
 
-## Why it's different
+## Why it's different — Copilot guesses, SQL Sage proves it
 
-- **Deterministic DBA tools — it reads the server, it doesn't guess.** Query Store regressions, backup/RPO health, missing-index recommendations (cross-checked against existing indexes), wait stats, live blocking & deadlock triage, permissions audit — values come from DMVs and catalogs, not the model.
-- **Keyless.** Runs on the Claude or ChatGPT account you already pay for (via Claude Code or Codex) — no separate API key, no metered second AI bill. Multi-provider: Anthropic Claude **and** OpenAI Codex / ChatGPT.
-- **Safe by default.** A ScriptDom gate classifies every statement before it runs: reads execute, writes and DDL stop for your explicit confirmation with the exact SQL in front of you.
+Most AI in SSMS predicts an answer from the model. SQL Sage reads the actual server through DMVs and system catalogs, then **proves and logs** what it did. Four deterministic surfaces make it a real SQL Server AI assistant rather than a chat box:
 
-## Download
+- **Change-Impact** — before any `ALTER` / `DROP`, see exactly what breaks: dependent views, stored procedures and triggers, inbound foreign keys, and the rows at risk. The blast radius, computed — not guessed.
+- **Incident Mode** — one-click live triage of a struggling server: the blocking chain, top waits, and the most expensive queries, with **every claim cited to a real number** from a DMV.
+- **Prove-It** — proves that an AI rewrite of a query returns the **same rows** as the original, using a deterministic multiset fingerprint. Zero AI tokens spent — it's pure computation, not a second opinion from the model.
+- **Tamper-evident audit** — a running, tamper-evident log of what the AI touched, with an evidence export you can hand to a reviewer or attach to a change ticket.
 
-Get the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest), or from the website: **https://sqlsage.lumasoft.pl**
+## Keyless — bring your own AI account
 
-- Windows · SSMS 22 · x64 / Arm64
-- Every install starts with a **30-day free trial** (all features, no credit card)
-- Own it once from **$39**, or subscribe from **$29/year**
+SQL Sage does not resell tokens and never sees your AI bill. Sign in with an account you already have:
 
-The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum). While download reputation builds, Windows SmartScreen may still prompt — choose **More info → Run anyway**.
+- **Claude in SSMS** via the Claude Code CLI, or
+- **ChatGPT / OpenAI Codex in SSMS** via the Codex CLI.
 
-## Support & feedback
+Pick the provider and model in the panel. No API key to paste, no per-token charge from us — a genuinely **keyless GitHub Copilot in SSMS alternative**.
 
-- Issues and feature requests: [GitHub Issues](https://github.com/LUMASoftPL/sqlsage/issues)
-- Email: support@lumasoft.pl
-- Docs: https://sqlsage.lumasoft.pl
+## Safe by default
+
+A ScriptDom gate classifies every statement before it runs:
+
+- **`SELECT` runs automatically** so exploration stays fast.
+- **DML / DDL stops for explicit confirmation**, with the exact SQL shown in front of you before anything executes.
+- SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in.
+
+## Editions & platforms
+
+Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL Managed Instance** — it uses what each platform exposes and degrades gracefully where a feature doesn't exist (for example, features that depend on server-level DMVs unavailable on Azure SQL Database).
+
+| | |
+| --- | --- |
+| Host | SQL Server Management Studio 22 |
+| OS | Windows · x64 / Arm64 |
+| Targets | SQL Server (box), Azure SQL Database, Azure SQL Managed Instance |
+| AI providers | Your own Claude (Claude Code) or ChatGPT / OpenAI Codex (Codex CLI) |
+
+## Install
+
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) or from **https://sqlsage.lumasoft.pl**.
+2. Run it. **SSMS 22 is required.**
+3. Open SSMS, connect to a server, and open the SQL Sage panel.
+
+The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum). Because this is a newer publisher whose download reputation is still building, Windows SmartScreen may show **"Windows protected your PC"** — choose **More info → Run anyway**. For extra assurance, verify the **SHA-256** hash published on the website against your downloaded file before installing.
+
+## Pricing
+
+- **30-day free trial** — all features, **no credit card**.
+- After the trial, a paid license. Because SQL Sage is **keyless**, you bring your own AI account and there is no metered AI charge on top.
+- Current pricing (see the site for details): own it once from **$39**, or subscribe from **$29/year**.
+
+Full, up-to-date pricing: **https://sqlsage.lumasoft.pl**
+
+## Links
+
+- **Website:** https://sqlsage.lumasoft.pl
+- **Latest release:** https://github.com/LUMASoftPL/sqlsage/releases/latest
+- **Discussions (Q&A):** https://github.com/LUMASoftPL/sqlsage/discussions
+- **Issues & feature requests:** https://github.com/LUMASoftPL/sqlsage/issues
+- **Email:** support@lumasoft.pl
 
 ---
 
-SQL Sage is a commercial product by **Luma (LUMA sp. z o.o.)**. This repository hosts releases, docs and issue tracking; the product source is not open-source. Not affiliated with Microsoft, Anthropic or OpenAI.
+SQL Sage is **commercial / proprietary software** — © LUMA sp. z o.o. This repository hosts releases, documentation and issue tracking; the product source is not open-source. Not affiliated with Microsoft, Anthropic or OpenAI.
