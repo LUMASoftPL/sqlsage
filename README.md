@@ -1,8 +1,8 @@
 # SQL Sage
 
 [![Latest release](https://img.shields.io/github/v/release/LUMASoftPL/sqlsage?label=release&color=2b7489)](https://github.com/LUMASoftPL/sqlsage/releases/latest)
-[![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.pl)
-[![Keyless](https://img.shields.io/badge/keyless-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl)
+[![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.pl/?src=github)
+[![Keyless](https://img.shields.io/badge/keyless-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl/?src=github)
 
 **AI pair-DBA for SSMS 22 that proves & logs what it changes — keyless, running on your own Claude / ChatGPT / Codex.**
 
@@ -51,23 +51,38 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) or from **https://sqlsage.lumasoft.pl**.
-2. Run it. **SSMS 22 is required.**
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.21.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
-The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum). Because this is a newer publisher whose download reputation is still building, Windows SmartScreen may show **"Windows protected your PC"** — choose **More info → Run anyway**. For extra assurance, verify the **SHA-256** hash published on the website against your downloaded file before installing.
+The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum) — since 0.21.0 end to end, including the setup stage it extracts to `%TEMP%` and the uninstaller, so it also runs on PCs with Smart App Control or App Control for Business. Because this is a newer publisher whose download reputation is still building, Windows SmartScreen may show **"Windows protected your PC"** — choose **More info → Run anyway**. For extra assurance, verify the **SHA-256** hash published on the website and in the release notes against your downloaded file before installing.
 
 ## Pricing
 
 - **30-day free trial** — all features, **no credit card**.
-- After the trial, a paid license. Because SQL Sage is **keyless**, you bring your own AI account and there is no metered AI charge on top.
+- After the trial, SQL Sage keeps working as **SQL Sage Free** (below); AI features and the Proven & Accountable layer need a paid license. Because SQL Sage is **keyless**, you bring your own AI account and there is no metered AI charge on top.
 - Current pricing (see the site for details): own it once from **$39**, or subscribe from **$29/year**.
 
-Full, up-to-date pricing: **https://sqlsage.lumasoft.pl**
+Full, up-to-date pricing: **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**
+
+### Free after the trial
+
+Every install starts with a 30-day free trial of everything. After it, SQL Sage keeps working as
+**SQL Sage Free** — the editor tools below, with zero AI (LLM) calls. AI features and the Proven &
+Accountable layer need a license.
+
+- **Free:** F5 execution warnings, JOIN…ON suggestions from foreign keys, Format SQL (uses SSMS's own
+  formatter when available), Expand `SELECT *`, Qualify object names, Execute current statement.
+  Redgate-style shortcuts (Ctrl+B, Ctrl+W · Ctrl+B, Ctrl+Q · Ctrl+K, Ctrl+Y · Shift+F5) step aside
+  automatically when SQL Prompt is installed.
+- **With a license:** AI chat, Explain / Fix / Optimize / Document, AI completions (Alt+.), and the
+  Proven & Accountable layer — Change-Impact, Incident Mode, Prove-It.
+
+Questions about Free: [GitHub Discussions](https://github.com/LUMASoftPL/sqlsage/discussions) (community, no SLA).
 
 ## Links
 
-- **Website:** https://sqlsage.lumasoft.pl
+- **Website:** [sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)
 - **Latest release:** https://github.com/LUMASoftPL/sqlsage/releases/latest
 - **Discussions (Q&A):** https://github.com/LUMASoftPL/sqlsage/discussions
 - **Issues & feature requests:** https://github.com/LUMASoftPL/sqlsage/issues
