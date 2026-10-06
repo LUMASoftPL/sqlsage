@@ -30,13 +30,18 @@ SQL Sage does not resell tokens and never sees your AI bill. Sign in with an acc
 
 Pick the provider and model in the panel. No API key to paste, no per-token charge from us — a genuinely **keyless GitHub Copilot in SSMS alternative**.
 
+New models appear on their own: the model list is read live from your Claude Code installation, so a new Claude model shows up without waiting for a SQL Sage release. You also choose **how hard the AI thinks** — a reasoning-effort selector next to the model picker offers exactly the levels your model supports (for example Low → High → Max), and `/effort high` raises it for a single answer. "Auto" keeps the fast default; higher effort is slower and uses more of your plan's limits.
+
 ## Safe by default
 
 A ScriptDom gate classifies every statement before it runs:
 
 - **`SELECT` runs automatically** so exploration stays fast.
 - **DML / DDL stops for explicit confirmation**, with the exact SQL shown in front of you before anything executes.
-- SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in.
+- Queries that reach **beyond the current database** — linked servers, `OPENQUERY`, `OPENROWSET` (including `BULK` file reads), `OPENDATASOURCE` — always stop for confirmation, even when they look like a plain `SELECT`.
+- SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in — and results you shared with one AI provider are **not re-sent to another** if you switch, unless you agree again.
+- **Run** executes only in the new query window SQL Sage opened, after checking the SQL, server and database match; every step (approved → dispatched → done or failed) lands in the audit log.
+- Chat history is **encrypted on disk** (Windows DPAPI) with a retention setting, or you can turn saving off.
 
 ## Editions & platforms
 
@@ -51,7 +56,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.21.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.22.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
