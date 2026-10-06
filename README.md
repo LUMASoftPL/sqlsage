@@ -56,7 +56,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.22.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.23.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
@@ -77,10 +77,14 @@ Every install starts with a 30-day free trial of everything. After it, SQL Sage 
 Accountable layer need a license.
 
 - **Free:** F5 execution warnings, JOIN…ON suggestions from foreign keys, Format SQL (uses SSMS's own
-  formatter when available), Expand `SELECT *`, Qualify object names, Execute current statement.
+  formatter when available), Expand `SELECT *`, Qualify object names, Execute current statement, a
+  one-click database health check (read-only, no AI), and the proven part of **Explain error** — when a query
+  fails, SQL Sage shows what the catalog proves (the missing column and the closest real name, the foreign key
+  or CHECK behind a 547, the key columns behind a duplicate, the column size behind a truncation, the parser
+  position of a syntax error). Values from your rows are never shown or sent.
   Redgate-style shortcuts (Ctrl+B, Ctrl+W · Ctrl+B, Ctrl+Q · Ctrl+K, Ctrl+Y · Shift+F5) step aside
   automatically when SQL Prompt is installed.
-- **With a license:** AI chat, Explain / Fix / Optimize / Document, AI completions (Alt+.), and the
+- **With a license:** AI chat, the AI explanation and fix for a failed query, Explain / Fix / Optimize / Document, AI completions (Alt+.), and the
   Proven & Accountable layer — Change-Impact, Incident Mode, Prove-It.
 
 Questions about Free: [GitHub Discussions](https://github.com/LUMASoftPL/sqlsage/discussions) (community, no SLA).
