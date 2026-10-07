@@ -42,6 +42,8 @@ A ScriptDom gate classifies every statement before it runs:
 - SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in — and results you shared with one AI provider are **not re-sent to another** if you switch, unless you agree again.
 - **Run** executes only in the new query window SQL Sage opened, after checking the SQL, server and database match; every step (approved → dispatched → done or failed) lands in the audit log.
 - Chat history is **encrypted on disk** (Windows DPAPI) with a retention setting, or you can turn saving off.
+- The AI can use **only SQL Sage's tools**: Codex runs read-only without its own shell or web search, and Claude Code's own file, shell and web tools are blocked in every SQL Sage turn. An answer stops after 12 steps or 10 minutes and tells you so.
+- Need help? **Copy diagnostics** builds a support report you preview first — no SQL, results, server/database names or keys.
 
 ## Editions & platforms
 
@@ -56,7 +58,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.23.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.24.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
