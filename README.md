@@ -2,9 +2,9 @@
 
 [![Latest release](https://img.shields.io/github/v/release/LUMASoftPL/sqlsage?label=release&color=2b7489)](https://github.com/LUMASoftPL/sqlsage/releases/latest)
 [![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.pl/?src=github)
-[![Keyless](https://img.shields.io/badge/keyless-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl/?src=github)
+[![Your own AI account](https://img.shields.io/badge/AI-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl/?src=github)
 
-**AI pair-DBA for SSMS 22 that proves & logs what it changes — keyless, running on your own Claude / ChatGPT / Codex.**
+**AI pair-DBA for SSMS 22 that proves & logs what it changes — running on your own Claude / ChatGPT / Codex account, no API key needed with Claude Code or Codex sign-in.**
 
 SQL Sage is an English-language extension you install inside **SQL Server Management Studio 22** on Windows (a VSIX add-in). It brings an AI pair-DBA into the query editor: it explains errors, tunes slow T-SQL, and runs SQL safely — signed in with your own **Claude** (Claude Code) or **ChatGPT / OpenAI Codex** account, so there is **no API key** and no second, metered AI bill. It runs as part of SSMS on your machine; it is **not** a web app or an online SQL editor.
 
@@ -21,14 +21,14 @@ Most AI in SSMS predicts an answer from the model. SQL Sage reads the actual ser
 - **Prove-It** — proves that an AI rewrite of a query returns the **same rows** as the original, using a deterministic multiset fingerprint. Zero AI tokens spent — it's pure computation, not a second opinion from the model.
 - **Tamper-evident audit** — a running, tamper-evident log of what the AI touched, with an evidence export you can hand to a reviewer or attach to a change ticket.
 
-## Keyless — bring your own AI account
+## Bring your own AI account
 
 SQL Sage does not resell tokens and never sees your AI bill. Sign in with an account you already have:
 
 - **Claude in SSMS** via the Claude Code CLI, or
 - **ChatGPT / OpenAI Codex in SSMS** via the Codex CLI.
 
-Pick the provider and model in the panel. No API key to paste, no per-token charge from us — a genuinely **keyless GitHub Copilot in SSMS alternative**.
+Pick the provider and model in the panel. With Claude Code or Codex sign-in there is no API key to paste (an Anthropic API key is optional), and no per-token charge from us. AI usage itself comes from your own Claude or ChatGPT plan.
 
 New models appear on their own: the model list is read live from your Claude Code installation, so a new Claude model shows up without waiting for a SQL Sage release. You also choose **how hard the AI thinks** — a reasoning-effort selector next to the model picker offers exactly the levels your model supports (for example Low → High → Max), and `/effort high` raises it for a single answer. "Auto" keeps the fast default; higher effort is slower and uses more of your plan's limits.
 
@@ -67,7 +67,7 @@ The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum) — since 0
 ## Pricing
 
 - **30-day free trial** — all features, **no credit card**.
-- After the trial, SQL Sage keeps working as **SQL Sage Free** (below); AI features and the Proven & Accountable layer need a paid license. Because SQL Sage is **keyless**, you bring your own AI account and there is no metered AI charge on top.
+- After the trial, SQL Sage keeps working as **SQL Sage Free** (below); AI features and the Proven & Accountable layer need a paid license. You bring your own AI account, so there is no metered AI charge from us on top.
 - Current pricing (see the site for details): own it once from **$39**, or subscribe from **$29/year**.
 
 Full, up-to-date pricing: **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**
