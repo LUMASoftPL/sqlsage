@@ -48,6 +48,7 @@ A ScriptDom gate classifies every statement before it runs:
 - Queries that reach **beyond the current database** — linked servers, `OPENQUERY`, `OPENROWSET` (including `BULK` file reads), `OPENDATASOURCE` — always stop for confirmation, even when they look like a plain `SELECT`.
 - SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in — and results you shared with one AI provider are **not re-sent to another** if you switch, unless you agree again.
 - **Run** executes only in the new query window SQL Sage opened, after checking the SQL, server and database match; every step (approved → dispatched → done or failed) lands in the audit log.
+- **Mask names** replaces server, database, login, host and file names with placeholders (`<database2>`, `<login1>`, …) in everything sent to the AI — tool results, the conversation and your own system prompt — stable for the whole chat. Inline completions still send the text around the cursor unchanged.
 - Chat history is **encrypted on disk** (Windows DPAPI) with a retention setting, or you can turn saving off.
 - The AI can use **only SQL Sage's tools**: Codex runs read-only without its own shell or web search, and Claude Code's own file, shell and web tools are blocked in every SQL Sage turn. An answer stops after 12 steps or 10 minutes and tells you so.
 - Need help? **Copy diagnostics** builds a support report you preview first — no SQL, results, server/database names or keys.
@@ -65,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.26.2**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.27.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
@@ -86,13 +87,14 @@ Every install starts with a 30-day free trial of everything. After it, SQL Sage 
 Accountable layer need a license.
 
 - **Free:** F5 execution warnings, JOIN…ON suggestions from foreign keys, Format SQL (uses SSMS's own
-  formatter when available), Expand `SELECT *`, Qualify object names, Execute current statement, a
-  one-click database health check (read-only, no AI), and the proven part of **Explain error** — when a query
+  formatter when available), Expand `SELECT *`, Qualify object names, Execute current statement,
+  **Check this database** (Tools › SQL Sage Tools — read-only, no AI, and it shows what changed since your last check:
+  new, resolved and unchanged findings), and the proven part of **Explain error** — when a query
   fails, SQL Sage shows what the catalog proves (the missing column and the closest real name, the foreign key
   or CHECK behind a 547, the key columns behind a duplicate, the column size behind a truncation, the parser
   position of a syntax error). Values from your rows are never shown or sent.
-  Redgate-style shortcuts (Ctrl+B, Ctrl+W · Ctrl+B, Ctrl+Q · Ctrl+K, Ctrl+Y · Shift+F5) step aside
-  automatically when SQL Prompt is installed.
+  Classic shortcuts (Ctrl+B, Ctrl+W · Ctrl+B, Ctrl+Q · Ctrl+K, Ctrl+Y · Shift+F5) step aside
+  automatically when another SSMS add-in already uses them.
   **SQL Sage History** — every query you run in SSMS, kept on this computer only and encrypted for your
   Windows account: server, database, status (with the SQL Server error number of a failed run), duration,
   rows returned and READ/WRITE/DDL class, newest first, searchable. Passwords in statements such as
