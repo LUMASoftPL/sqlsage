@@ -17,7 +17,7 @@ It is an independent extension built by **Luma (LUMA sp. z o.o.)** and is **not 
 Most AI in SSMS predicts an answer from the model. SQL Sage reads the actual server through DMVs and system catalogs, then **proves and logs** what it did. Four deterministic surfaces make it a real SQL Server AI assistant rather than a chat box:
 
 - **Change-Impact** — before any `ALTER` / `DROP`, see exactly what breaks: dependent views, stored procedures and triggers, inbound foreign keys, and the rows at risk. The blast radius, computed — not guessed.
-- **Incident Mode** — one-click live triage of a struggling server: the blocking chain, top waits, and the most expensive queries, with **every claim cited to a real number** from a DMV.
+- **Incident Mode** — one-click live triage of a struggling server: the blocking chain (including the most common real culprit — an idle session that left a transaction open), top waits, and the most expensive queries, with **every claim cited to a real number** from a DMV. If your login can't see other sessions, it says so instead of reporting "no blocking".
 - **Prove-It** — proves that an AI rewrite of a query returns the **same rows** as the original, using a deterministic multiset fingerprint. Zero AI tokens spent — it's pure computation, not a second opinion from the model.
 - **Tamper-evident audit** — a running, tamper-evident log of what the AI touched, with an evidence export you can hand to a reviewer or attach to a change ticket.
 
@@ -65,7 +65,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.26.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.26.1**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
