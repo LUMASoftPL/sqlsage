@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.27.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.28.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
@@ -74,7 +74,7 @@ The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum) — since 0
 
 ## Pricing
 
-- **30-day free trial** — all features, **no credit card**.
+- **30-day free trial** — all features, **no credit card**. The 30 days start with your first AI answer (or 14 days after you first open the panel, whichever comes first), so exploring the free tools first doesn't use up the trial.
 - After the trial, SQL Sage keeps working as **SQL Sage Free** (below); AI features and the Proven & Accountable layer need a paid license. You bring your own AI account, so there is no metered AI charge from us on top.
 - Current pricing (see the site for details): own it once from **$39**, or subscribe from **$29/year**.
 
