@@ -30,7 +30,14 @@ SQL Sage does not resell tokens and never sees your AI bill. Sign in with an acc
 
 Pick the provider and model in the panel. With Claude Code or Codex sign-in there is no API key to paste (an Anthropic API key is optional), and no per-token charge from us. AI usage itself comes from your own Claude or ChatGPT plan.
 
-New models appear on their own: the model list is read live from your Claude Code installation, so a new Claude model shows up without waiting for a SQL Sage release. You also choose **how hard the AI thinks** — a reasoning-effort selector next to the model picker offers exactly the levels your model supports (for example Low → High → Max), and `/effort high` raises it for a single answer. "Auto" keeps the fast default; higher effort is slower and uses more of your plan's limits.
+New models appear on their own: the model list is read live from your Claude Code installation, so a new Claude model shows up without waiting for a SQL Sage release. You also choose **how hard the AI thinks** — the model button at the bottom of the chat (for example `Opus · Auto`) offers exactly the effort levels your model supports (for example Low → High → Max), and `/effort high` raises it for a single answer. "Auto" keeps the fast default; higher effort is slower and uses more of your plan's limits.
+
+Two modes, picked next to the model:
+
+- **Agent** (default) — the AI may run read-only queries and SQL Sage's tools to check its answer; writes always ask you first.
+- **Ask** — the AI answers only from the query you attached and the chat, and **runs nothing on the server**: that turn has no tools at all. Available with Claude Code and your own Anthropic API key; not with Codex, which always loads your own MCP servers, so SQL Sage can't guarantee a tool-free turn there.
+
+A chip above the message box always shows what leaves your computer in that turn (for example `Schema + query → Claude`), and the privacy switches sit behind a shield next to the round Send button, which turns into Stop while the answer streams. The panel follows every SSMS 22 theme, light and dark.
 
 ## Safe by default
 
@@ -58,7 +65,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.24.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.25.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
