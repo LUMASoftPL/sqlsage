@@ -65,7 +65,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.25.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.26.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel.
 
@@ -93,8 +93,15 @@ Accountable layer need a license.
   position of a syntax error). Values from your rows are never shown or sent.
   Redgate-style shortcuts (Ctrl+B, Ctrl+W · Ctrl+B, Ctrl+Q · Ctrl+K, Ctrl+Y · Shift+F5) step aside
   automatically when SQL Prompt is installed.
-- **With a license:** AI chat, the AI explanation and fix for a failed query, Explain / Fix / Optimize / Document, AI completions (Alt+.), and the
-  Proven & Accountable layer — Change-Impact, Incident Mode, Prove-It.
+  **SQL Sage History** — every query you run in SSMS, kept on this computer only and encrypted for your
+  Windows account: server, database, status (with the SQL Server error number of a failed run), duration,
+  rows returned and READ/WRITE/DDL class, newest first, searchable. Passwords in statements such as
+  `CREATE LOGIN` are masked before saving and query results are never stored; "Open in new window"
+  reconnects to the same server and never runs anything. Retention 30 days by default; pause or switch off
+  any time.
+- **With a license:** AI chat, the AI explanation and fix for a failed query, Explain / Fix / Optimize / Document, AI completions (Alt+.), the
+  Proven & Accountable layer — Change-Impact, Incident Mode, Prove-It — and, on any history entry, "Why is this
+  slower than last time?" and a proof that the editor's version returns the same rows.
 
 Questions about Free: [GitHub Discussions](https://github.com/LUMASoftPL/sqlsage/discussions) (community, no SLA).
 
