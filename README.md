@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.29.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.30.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
@@ -97,8 +97,10 @@ Accountable layer need a license.
   automatically when another SSMS add-in already uses them.
   **SQL Sage History** — every query you run in SSMS, kept on this computer only and encrypted for your
   Windows account: server, database, status (with the SQL Server error number of a failed run), duration,
-  rows returned and READ/WRITE/DDL class, newest first, searchable. Passwords in statements such as
-  `CREATE LOGIN` are masked before saving and query results are never stored; "Open in new window"
+  rows returned and READ/WRITE/DDL class, newest first, searchable. **Recently closed (unsaved)** keeps
+  query tabs you closed without saving, so a lost script can be reopened. Only passwords and other secrets
+  (for example in `CREATE LOGIN`) are replaced with `?` before saving — the rest is kept as typed — and query
+  results are never stored; "Open in new window"
   reconnects to the same server and never runs anything. Retention 30 days by default; pause or switch off
   any time.
 - **With a license:** AI chat, the AI explanation and fix for a failed query, Explain / Fix / Optimize / Document, AI completions (Alt+.), the
