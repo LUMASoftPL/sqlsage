@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.33.3**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.34.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
@@ -93,7 +93,9 @@ Accountable layer need a license.
   also suggest that alias in grey text (Tab accepts) — it steps aside for the IntelliSense list and while GitHub
   Copilot's completions are active, and stays off where SQL Prompt or SQL Complete is installed;
   **SQL Sage Search** (Ctrl+Alt+D) — find tables, views, procedures, functions and columns by name, and text inside
-  definitions, across all databases on the server (unreadable databases are listed, never skipped silently);
+  definitions, across all databases on the server (unreadable databases are listed, never skipped silently) — and, on any
+  column, **who writes and who reads it** (procedures, functions, views, triggers, as SQL Server records them; each row says how
+  sure it is, and an empty answer says what was not checked instead of claiming nothing writes the column);
   **What's blocking now** — a live view in SQL Sage History of who blocks whom, including an idle session that left a
   transaction open, open transactions and which session is probably yours; KILL and GRANT only as scripts in a new
   window (F5 asks before a KILL runs);
