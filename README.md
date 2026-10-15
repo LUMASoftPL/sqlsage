@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.34.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.35.0**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
@@ -118,7 +118,9 @@ Accountable layer need a license.
   any time.
 - **With a license:** AI chat, the AI explanation and fix for a failed query, Explain / Fix / Optimize / Document, AI completions (Alt+.), the
   Proven & Accountable layer — Change-Impact, Incident Mode, Prove-It — and, on any history entry, "Why is this
-  slower than last time?" and a proof that the editor's version returns the same rows.
+  slower than last time?" and a proof that the editor's version returns the same rows; plus the **"Is this slower than
+  before?" card** — the History entry linked to Query Store, plans and run times compared, and a verdict worked out by code
+  (no AI), each number with the exact T-SQL behind it and a Markdown note for the ticket.
 
 Questions about Free: [GitHub Discussions](https://github.com/LUMASoftPL/sqlsage/discussions) (community, no SLA).
 
