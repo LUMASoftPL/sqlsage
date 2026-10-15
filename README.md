@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.33.1**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.33.2**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
@@ -90,8 +90,8 @@ Accountable layer need a license.
   on databases without them, from matching key column names (always marked as a name match) and from joins you ran
   before (SQL Sage History, on this computer only); when it is safe, the table in FROM gets a short alias too
   (`Registration r`) — announced before you press Tab, one Ctrl+Z undoes it; right after `FROM <table>` and a space it can
-  also suggest that alias in grey text (Tab accepts) — it steps aside for the IntelliSense list and stays off where SQL
-  Prompt, SQL Complete or GitHub Copilot is installed;
+  also suggest that alias in grey text (Tab accepts) — it steps aside for the IntelliSense list and while GitHub
+  Copilot's completions are active, and stays off where SQL Prompt or SQL Complete is installed;
   **SQL Sage Search** (Ctrl+Alt+D) — find tables, views, procedures, functions and columns by name, and text inside
   definitions, across all databases on the server (unreadable databases are listed, never skipped silently);
   **What's blocking now** — a live view in SQL Sage History of who blocks whom, including an idle session that left a
