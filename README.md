@@ -1,8 +1,8 @@
 # SQL Sage
 
 [![Latest release](https://img.shields.io/github/v/release/LUMASoftPL/sqlsage?label=release&color=2b7489)](https://github.com/LUMASoftPL/sqlsage/releases/latest)
-[![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.pl/?src=github)
-[![Your own AI account](https://img.shields.io/badge/AI-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.pl/?src=github)
+[![Made for SSMS 22](https://img.shields.io/badge/made%20for-SSMS%2022-blue)](https://sqlsage.lumasoft.org/?src=github)
+[![Your own AI account](https://img.shields.io/badge/AI-your%20own%20Claude%20%2F%20ChatGPT%20%2F%20Codex-6f42c1)](https://sqlsage.lumasoft.org/?src=github)
 
 **AI pair-DBA for SSMS 22 that proves & logs what it changes — running on your own Claude / ChatGPT / Codex account, no API key needed with Claude Code or Codex sign-in.**
 
@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.35.2**) or from **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.35.3**) or from **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
@@ -78,7 +78,7 @@ The installer is Authenticode-signed by **LUMA sp. z o.o.** (Certum) — since 0
 - After the trial, SQL Sage keeps working as **SQL Sage Free** (below); AI features and the Proven & Accountable layer need a paid license. You bring your own AI account, so there is no metered AI charge from us on top.
 - Current pricing (see the site for details): own it once from **$39**, or subscribe from **$29/year**.
 
-Full, up-to-date pricing: **[sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)**
+Full, up-to-date pricing: **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**
 
 ### Free after the trial
 
@@ -126,7 +126,7 @@ Questions about Free: [GitHub Discussions](https://github.com/LUMASoftPL/sqlsage
 
 ## Links
 
-- **Website:** [sqlsage.lumasoft.pl](https://sqlsage.lumasoft.pl/?src=github)
+- **Website:** [sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)
 - **Latest release:** https://github.com/LUMASoftPL/sqlsage/releases/latest
 - **Discussions (Q&A):** https://github.com/LUMASoftPL/sqlsage/discussions
 - **Issues & feature requests:** https://github.com/LUMASoftPL/sqlsage/issues
