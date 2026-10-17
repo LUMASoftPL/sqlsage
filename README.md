@@ -45,7 +45,7 @@ A chip above the message box always shows what leaves your computer in that turn
 
 A ScriptDom gate classifies every statement before it runs:
 
-- **`SELECT` runs automatically** so exploration stays fast.
+- **Reads of system catalogs and DMVs run on their own** so exploration stays fast. A `SELECT` the AI writes on your own tables runs only after you agree to share results for the session — until then it is not executed and the AI sees only its column names and types.
 - **DML / DDL stops for explicit confirmation**, with the exact SQL shown in front of you before anything executes.
 - Queries that reach **beyond the current database** — linked servers, `OPENQUERY`, `OPENROWSET` (including `BULK` file reads), `OPENDATASOURCE` — always stop for confirmation, even when they look like a plain `SELECT`.
 - SQL Sage reads **schema and DMVs**; it **never sends your query results to the model** without an explicit per-session opt-in — and results you shared with one AI provider are **not re-sent to another** if you switch, unless you agree again.
