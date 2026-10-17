@@ -28,6 +28,8 @@ SQL Sage does not resell tokens and never sees your AI bill. Sign in with an acc
 - **Claude in SSMS** via the Claude Code CLI, or
 - **ChatGPT / OpenAI Codex in SSMS** via the Codex CLI.
 
+The four ways to get Claude in SSMS today, compared honestly (Copilot's Claude models, Copilot BYOM, add-ins over the Claude Code CLI, Claude Code in a terminal + MCP): **[Claude in SSMS](https://sqlsage.lumasoft.org/claude-in-ssms?src=github)**.
+
 Pick the provider and model in the panel. With Claude Code or Codex sign-in there is no API key to paste (an Anthropic API key is optional), and no per-token charge from us. AI usage itself comes from your own Claude or ChatGPT plan.
 
 New models appear on their own: the model list is read live from your Claude Code installation, so a new Claude model shows up without waiting for a SQL Sage release. You also choose **how hard the AI thinks** — the model button at the bottom of the chat (for example `Opus · Auto`) offers exactly the effort levels your model supports (for example Low → High → Max), and `/effort high` raises it for a single answer. "Auto" keeps the fast default; higher effort is slower and uses more of your plan's limits.
