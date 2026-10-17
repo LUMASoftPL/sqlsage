@@ -19,7 +19,7 @@ Most AI in SSMS predicts an answer from the model. SQL Sage reads the actual ser
 - **Change-Impact** — before any `ALTER` / `DROP`, see exactly what breaks: dependent views, stored procedures and triggers, inbound foreign keys, and the rows at risk. The blast radius, computed — not guessed.
 - **Incident Mode** — one-click live triage of a struggling server: the blocking chain (including the most common real culprit — an idle session that left a transaction open), top waits, and the most expensive queries, with **every claim cited to a real number** from a DMV. If your login can't see other sessions, it says so instead of reporting "no blocking".
 - **Prove-It** — proves that an AI rewrite of a query returns the **same rows** as the original, using a deterministic multiset fingerprint. Zero AI tokens spent — it's pure computation, not a second opinion from the model.
-- **Tamper-evident audit** — a running, tamper-evident log of what the AI touched, with an evidence export you can hand to a reviewer or attach to a change ticket.
+- **Tamper-evident audit log** — a local, hash-chained record of what SQL Sage ran or blocked, with an evidence export for a reviewer or change ticket. Passwords and other secret values are replaced with `?` before an entry is written (from 0.35.4). Tamper-evident, not tamper-proof: it shows edits inside a day's file, not a rebuilt or deleted file.
 
 ## Bring your own AI account
 
@@ -66,7 +66,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.35.3**) or from **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.35.4**) or from **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
