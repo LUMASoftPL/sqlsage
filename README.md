@@ -28,7 +28,7 @@ SQL Sage does not resell tokens and never sees your AI bill. Sign in with an acc
 - **Claude in SSMS** via the Claude Code CLI, or
 - **ChatGPT / OpenAI Codex in SSMS** via the Codex CLI.
 
-The four ways to get Claude in SSMS today, compared honestly (Copilot's Claude models, Copilot BYOM, add-ins over the Claude Code CLI, Claude Code in a terminal + MCP): **[Claude in SSMS](https://sqlsage.lumasoft.org/claude-in-ssms?src=github)**.
+The five ways to get Claude in SSMS today, compared honestly (Copilot's Claude models, Copilot BYOM, Devart's dbForge AI Assistant, add-ins over the Claude Code CLI, Claude Code in a terminal + MCP): **[Claude in SSMS](https://sqlsage.lumasoft.org/claude-in-ssms?src=github)**.
 
 Pick the provider and model in the panel. With Claude Code or Codex sign-in there is no API key to paste (an Anthropic API key is optional), and no per-token charge from us. AI usage itself comes from your own Claude or ChatGPT plan.
 
@@ -68,7 +68,7 @@ Edition-aware across **box SQL Server**, **Azure SQL Database**, and **Azure SQL
 
 ## Install
 
-1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.36.2**) or from **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**.
+1. Download the signed installer from the [**latest release**](https://github.com/LUMASoftPL/sqlsage/releases/latest) (currently **0.36.3**) or from **[sqlsage.lumasoft.org](https://sqlsage.lumasoft.org/?src=github)**.
 2. Run it. **SSMS 22 is required.** When upgrading, close SSMS first.
 3. Open SSMS, connect to a server, and open the SQL Sage panel. **Getting started** walks you through three steps — check the database (free, no AI), connect an AI (SQL Sage detects Claude Code, the Codex CLI or an API key and copies the install command), first answer. The plan pill in the chat header shows your trial or license and its dates.
 
